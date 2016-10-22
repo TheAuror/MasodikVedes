@@ -4,7 +4,7 @@ package batfai.samuentropy.brainboard8;
  * Created by Auror on 2016.10.22..
  */
 
-class Nodes {
+public class Nodes {
 
     public final static int NODES_START = 2;
 

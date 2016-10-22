@@ -1,28 +1,33 @@
 package batfai.samuentropy.brainboard8;
 
-/**
- * Created by Auror on 2016.10.22..
- */
+import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 
-class Splash extends Thread {
+import com.brainboard.activities.NeuronGameActivity;
+import com.brainboard.activities.SplashActivity;
 
-    SplashActivity act;
-    android.graphics.drawable.AnimationDrawable anim;
+public class Splash extends Thread {
 
-    public Splash(android.graphics.drawable.AnimationDrawable anim, SplashActivity act) {
-        this.anim = anim;
+    private SplashActivity act;
+    private AnimationDrawable anim;
+
+    public Splash(SplashActivity act)
+    {
         this.act = act;
+        this.anim = act.getAnimation();
     }
 
-    public void st() {
-        android.content.Intent intent = new android.content.Intent();
+    public void st()
+    {
+        Intent intent = new Intent();
         intent.setClass(act, NeuronGameActivity.class);
         act.startActivity(intent);
         anim.stop();
     }
 
     @Override
-    public void run() {
+    public void run()
+    {
         anim.start();
     }
 }

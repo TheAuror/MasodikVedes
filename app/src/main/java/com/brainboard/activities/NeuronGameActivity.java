@@ -1,5 +1,5 @@
 /*
- * SplashActivity.java
+ * NeuronAnimActivity.java
  *
  * Norbiron Game
  * This is a case study for creating sprites for SamuEntropy/Brainboard.
@@ -37,42 +37,20 @@
  *
  * 0.0.1, 2013.szept.29.
  */
-package batfai.samuentropy.brainboard8;
+package com.brainboard.activities;
 
-import android.graphics.drawable.AnimationDrawable;
-import android.os.Bundle;
-import android.view.MotionEvent;
-import android.widget.ImageView;
+import batfai.samuentropy.brainboard8.R;
 
 /**
  *
  * @author nbatfai
  */
-public class SplashActivity extends android.app.Activity {
-
-    private Splash splash;
-
+public class NeuronGameActivity extends android.app.Activity
+{
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(android.os.Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
-
-        ImageView iv = (ImageView) findViewById(R.id.neuronanimation);
-
-        iv.setBackgroundResource(R.drawable.neuron_animation);
-
-        final AnimationDrawable anim = (AnimationDrawable) iv.getBackground();
-
-        splash = new Splash(anim, this);
-        runOnUiThread(splash);
-
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent evt) {
-        if (evt.getAction() == MotionEvent.ACTION_DOWN) {
-            splash.st();
-        }
-        return true;
+        setContentView(R.layout.main);
     }
 }

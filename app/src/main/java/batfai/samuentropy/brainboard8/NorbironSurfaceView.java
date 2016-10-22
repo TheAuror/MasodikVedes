@@ -39,6 +39,9 @@
  */
 package batfai.samuentropy.brainboard8;
 
+import com.brainboard.activities.NeuronGameActivity;
+import com.brainboard.activities.NodeActivity;
+
 import java.util.List;
 
 /**

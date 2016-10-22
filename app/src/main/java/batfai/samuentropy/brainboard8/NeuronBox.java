@@ -39,56 +39,49 @@
  */
 package batfai.samuentropy.brainboard8;
 
+import android.graphics.Paint;
+import android.graphics.Rect;
+
 /**
- *
  * @author nbatfai
  */
 public class NeuronBox implements Cloneable {
-
+    private static Paint boxPaint = new Paint();
+    private static Paint selectedBoxPaint = new Paint();
+    private int selectedBoxPaintSize = 0;
+    private boolean open = false;
+    private boolean selected = false;
+    private Rect to;
     private Sprite[] neurons;
-
-    private android.graphics.Bitmap tiles;
     private android.graphics.Bitmap cover;
-    android.graphics.Rect to;
     private int boxWidth;
     private int boxHeight;
     private int x;
     private int y;
-    int numberOfNeurons;
-    protected static android.graphics.Paint boxPaint = new android.graphics.Paint();
-    protected static android.graphics.Paint selectedBoxPaint = new android.graphics.Paint();
-    protected int selectedBoxPaintSize = 0;
-
-    protected boolean open = false;
-    protected boolean selected = false;
-
     private int type = 1;
 
-    public NeuronBox(android.graphics.Bitmap tiles, int length, int width, int height,
-            int numberOfNeurons,
-            android.graphics.Bitmap cover, int x, int y) {
+    NeuronBox(android.graphics.Bitmap tiles, int length, int width, int height,
+              int numberOfNeurons,
+              android.graphics.Bitmap cover, int x, int y) {
         this.x = x;
         this.y = y;
-        this.tiles = tiles;
 
         this.cover = cover;
         this.boxWidth = cover.getWidth();
         this.boxHeight = cover.getHeight();
 
-        to = new android.graphics.Rect(0, 0, boxWidth, boxHeight);
-
-        this.numberOfNeurons = numberOfNeurons;
+        to = new Rect(0, 0, boxWidth, boxHeight);
 
         boxPaint.setColor(android.graphics.Color.argb(0xaf, 0xc4, 0xd9,
                 0xbf));
-        boxPaint.setStyle(android.graphics.Paint.Style.FILL_AND_STROKE);
+        boxPaint.setStyle(Paint.Style.FILL_AND_STROKE);
         boxPaint.setAntiAlias(true);
         boxPaint.setStrokeWidth(55);
         boxPaint.setAlpha(170);
 
         selectedBoxPaint.setColor(android.graphics.Color.argb(0x8f, 0x44, 0xd9,
                 0xbf));
-        selectedBoxPaint.setStyle(android.graphics.Paint.Style.STROKE);
+        selectedBoxPaint.setStyle(Paint.Style.STROKE);
         selectedBoxPaint.setAntiAlias(true);
         selectedBoxPaint.setStrokeWidth(1);
 
@@ -117,20 +110,20 @@ public class NeuronBox implements Cloneable {
         this.type = type;
     }
 
-    public void setSelected(boolean selected) {
-        this.selected = selected;
-    }
-
     public boolean getSelected() {
         return selected;
     }
 
-    public void setCover(boolean open) {
-        this.open = open;
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 
     public boolean getCover() {
         return open;
+    }
+
+    public void setCover(boolean open) {
+        this.open = open;
     }
 
     public int getWidth() {
@@ -189,7 +182,5 @@ public class NeuronBox implements Cloneable {
         for (int i = 0; i < neurons.length; ++i) {
             neurons[i].step();
         }
-
     }
-
 }
