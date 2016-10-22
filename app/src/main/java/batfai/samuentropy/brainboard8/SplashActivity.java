@@ -39,28 +39,10 @@
  */
 package batfai.samuentropy.brainboard8;
 
-class Splash extends Thread {
-
-    SplashActivity act;
-    android.graphics.drawable.AnimationDrawable anim;
-
-    public Splash(android.graphics.drawable.AnimationDrawable anim, SplashActivity act) {
-        this.anim = anim;
-        this.act = act;
-    }
-
-    public void st() {
-        android.content.Intent intent = new android.content.Intent();
-        intent.setClass(act, NeuronGameActivity.class);
-        act.startActivity(intent);
-        anim.stop();
-    }
-
-    @Override
-    public void run() {
-        anim.start();
-    }
-}
+import android.graphics.drawable.AnimationDrawable;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.widget.ImageView;
 
 /**
  *
@@ -71,15 +53,15 @@ public class SplashActivity extends android.app.Activity {
     private Splash splash;
 
     @Override
-    public void onCreate(android.os.Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
 
-        android.widget.ImageView iv = (android.widget.ImageView) findViewById(R.id.neuronanimation);
+        ImageView iv = (ImageView) findViewById(R.id.neuronanimation);
 
         iv.setBackgroundResource(R.drawable.neuron_animation);
 
-        final android.graphics.drawable.AnimationDrawable anim = (android.graphics.drawable.AnimationDrawable) iv.getBackground();
+        final AnimationDrawable anim = (AnimationDrawable) iv.getBackground();
 
         splash = new Splash(anim, this);
         runOnUiThread(splash);
@@ -87,8 +69,8 @@ public class SplashActivity extends android.app.Activity {
     }
 
     @Override
-    public boolean onTouchEvent(android.view.MotionEvent evt) {
-        if (evt.getAction() == android.view.MotionEvent.ACTION_DOWN) {
+    public boolean onTouchEvent(MotionEvent evt) {
+        if (evt.getAction() == MotionEvent.ACTION_DOWN) {
             splash.st();
         }
         return true;
