@@ -1,0 +1,87 @@
+[
+    {
+        "outputFile": "E:\\Git\\Brainboard\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 39,
+                    "endOffset": 90
+                },
+                "from": {
+                    "file": "E:\\Git\\Brainboard\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 112,
+                        "endColumn": 39,
+                        "endOffset": 147
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 95,
+                    "endColumn": 53,
+                    "endOffset": 144
+                },
+                "from": {
+                    "file": "E:\\Git\\Brainboard\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 53,
+                        "endOffset": 106
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 149,
+                    "endLine": 7,
+                    "endColumn": 12,
+                    "endOffset": 377
+                },
+                "from": {
+                    "file": "E:\\Git\\Brainboard\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 1,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 248
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 382,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 783
+                },
+                "from": {
+                    "file": "E:\\Git\\Brainboard\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 254,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 661
+                    }
+                }
+            }
+        ]
+    }
+]
